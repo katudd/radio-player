@@ -14,6 +14,7 @@ class App extends React.Component {
     fetch("https://api.sr.se/api/v2/channels?format=json&size=100").then((response) => {
       return response.json()
     }).then((json) => {
+      console.log(json)
       this.setState({
         radioChannel: json.channels
       })
@@ -24,7 +25,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <h1>Lyssna direkt på SR:s kanaler</h1>
-        {this.state.radioChannel.map((item) => {
+        {this.state.radioChannel.slice(0, 28).map((item) => {
           return <Station
             key={item.id}
             name={item.name}

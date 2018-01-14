@@ -9,7 +9,7 @@ class Station extends React.Component {
         <div className="content">
           <h2>{this.props.name}</h2>
           <audio controls>
-            <source src={this.props.liveaudio} />
+            <source src={this.props.liveaudio} type="audio/mpeg" />
             <track kind="captions" />
           </audio>
         </div>
